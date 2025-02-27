@@ -2,10 +2,11 @@
 {% load static %}
 {% block title %}Recipe Book{% endblock %}
 {% block content %}
-<p>{{name}}</p>
+<p>{{recipe.name}}</p>
+
 <ul>
     {% for ingredient in ingredients %}
-    <li>{{ingredient.quantity}} of {{ingredient.name}}</li>
+    <li>{{ingredient.quantity}} of {{ingredient.ingredient.name}}</li>
     {% endfor %}
 </ul>
 {% endblock %}
