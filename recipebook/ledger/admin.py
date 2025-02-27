@@ -9,8 +9,4 @@ class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
     inlines = [RecipeIngredientInLine,]
 
-
-
-# registering the model and the admin is what tells
-# Django that admin pages must be generated for the models specified
 admin.site.register(Recipe, RecipeAdmin)
