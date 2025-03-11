@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+
+
 class Ingredients(models.Model):
     name = models.CharField(max_length=100)
 
@@ -11,7 +13,10 @@ class Ingredients(models.Model):
 
 class Recipe(models.Model): 
     name = models.CharField(max_length=100)
-    
+    author = models.CharField(max_length=100)
+    CreatedOn = models.DateTimeField(auto_now_add=True)
+    UpdatedOn = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.name
     
