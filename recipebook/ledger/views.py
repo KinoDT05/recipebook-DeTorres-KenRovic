@@ -1,25 +1,17 @@
 from django.shortcuts import render
 from .models import Ingredients, Recipe, RecipeIngredient
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.http import HttpResponse
 
 def index(request):
     return HttpResponse('Hello World! This came from the index view')
 
-def recipe_list(request):
-    recipes = Recipe.objects.all()
+class recipe_list(ListView):
+    model = Recipe
+    template_name = 'list.html'
 
-    ctx = {
-        'recipes':recipes
-    }
-    return render(request, "list.html", ctx)
 
-def recipeDetail(request, id):
-    recipe = Recipe.objects.get(id=id)
-    ingredients = recipe.recipe.all()
-    ctx = { 
-        'recipe':recipe,
-        'ingredients': ingredients
-    }
-
-    return render(request, "recipe.html", ctx)
-
+class recipeDetail(DetailView):
+    model = Recipe
+    template_name = 'recipe.html'

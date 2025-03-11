@@ -3,10 +3,10 @@
 {% block title %}Recipe Book{% endblock %}
 {% block content %}
 
-<p>{{recipe.name}}</p>
+<p>{{object.name}}</p>
 
 <ul>
-    {% for ingredient in ingredients %}
+    {% for ingredient in object.ingredients.all %}
     <li>{{ingredient.quantity}} of {{ingredient.ingredient.name}}</li>
     {% endfor %}
 </ul>
