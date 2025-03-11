@@ -3,16 +3,8 @@
 {% block title %}Recipe Book{% endblock %}
 {% block content %}
 
-
 {% if request.user.is_authenticated %}
-    <h1>Welcome, {{ request.user.username }}!</h1>
-        <form method="POST" action="{% url 'logout' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Logout</button>
-        </form>
-{% else %}
-    <a href="{% url 'login' %}">Login</a>
+    <h2>Welcome, {{ request.user.username }}!</h2>
 {% endif %}
 
 

@@ -3,9 +3,21 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <title>{% block title %}Recipe Book{% endblock %}</title>
+
+    {% if request.user.is_authenticated %}
+        <h2>Recipe Book</h2>
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+
 </head>
 <body>
-    <h2>Recipe Book</h2>
+    
     <div id="content">
             {% block content %}{% endblock %}
     </div>
