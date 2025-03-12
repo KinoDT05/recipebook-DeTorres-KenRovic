@@ -7,6 +7,7 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse('Hello World! This came from the index view')
 
+
 class recipe_list(ListView):
     model = Recipe
     template_name = 'list.html'
