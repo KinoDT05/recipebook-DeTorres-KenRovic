@@ -12,9 +12,11 @@
 
 <a href="/recipe/{{ object.pk }}/add">Add Image</a>
 
+<p>
 {% for image in object.images.all %}
 <img src="{{ image.image.url }}" alt="{{ image.description }}">
 {% endfor %}
+<p/>
 
 
 <ul>
