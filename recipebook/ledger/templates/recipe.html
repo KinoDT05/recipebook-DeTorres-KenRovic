@@ -7,8 +7,13 @@
 
 <h3>{{object.name}}</h3>
 {% if request.user.is_authenticated %}
-    <p>Written by: {{object.author}}</p>
+<p>Written by: {{object.author}}</p>
 {% endif %}
+
+
+{% for image in object.images.all %}
+<img src="{{ image.image.url }}" alt="{{ image.description }}">
+{% endfor %}
 
 
 <ul>
