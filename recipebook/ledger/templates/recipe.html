@@ -10,6 +10,7 @@
 <p>Written by: {{object.author}}</p>
 {% endif %}
 
+<a href="/recipe/{{ object.pk }}/add">Add Image</a>
 
 {% for image in object.images.all %}
 <img src="{{ image.image.url }}" alt="{{ image.description }}">

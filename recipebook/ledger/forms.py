@@ -5,3 +5,7 @@ class RecipeForm(forms.Form):
     author = forms.CharField(label='Recipe Authoer', max_length=100)
     recipeImage = forms.ImageField(label = 'Recipe Image')
     imageDescription = forms.CharField(label = 'Image Description',max_length=255)
+
+class RecipeImageForm(forms.Form):
+    recipeImage = forms.ImageField(label = 'Recipe Image')
+    imageDescription = forms.CharField(label = 'Image Description',max_length=255)
