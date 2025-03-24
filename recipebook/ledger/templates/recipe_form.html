@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Recipe Book{% endblock %}
+{% block content %}
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ recipeForm }}
+    <input type="submit" value="Submit">
+</form>
+
+<p>{{ notice }}</p>
+
+{% endblock %}
